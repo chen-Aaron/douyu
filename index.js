@@ -87,6 +87,8 @@ room.forEach((item)=>{
 
 	client.init();
 
-	client.run();
+	client.getComment();
+
+	client.getGift();
 
 })
