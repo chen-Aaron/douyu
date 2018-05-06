@@ -77,9 +77,9 @@
 // })
 const MyDouYu = require('./src/index');
 
-// let room = ['1972046', '9999'];
+let room = ['1972046', '9999'];
 
-let room = ['507882']
+// let room = ['507882']
 
 room.forEach((item)=>{
 
