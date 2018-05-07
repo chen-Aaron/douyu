@@ -51,7 +51,7 @@ class danmu{
                     \`sahf\` varchar(255) NOT NULL,
                     \`cst\` varchar(255) NOT NULL,
                     \`hc\` varchar(255) NOT NULL,
-                    \`el\` varchar(255) NOT NULL,
+                    \`el\` text NOT NULL,
                     \`lk\` varchar(255) NOT NULL,
                     \`repin\` varchar(255) NOT NULL,
                     \`repout\` varchar(255) NOT NULL,

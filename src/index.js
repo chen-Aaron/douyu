@@ -32,6 +32,8 @@ class MyDouYu{
 
         this._queue = [];
 
+        this._giftQueue = [];
+
     }
 
     // 用户获取用户弹幕提示信息
@@ -58,6 +60,8 @@ class MyDouYu{
                         queue.forEach((item) => {
 
                             item['gt'] = item['gt'] ? escape(item['gt']) : 0;
+                            item['txt'] = item['txt'] ? escape(item['txt']) : '';
+                            item['cid'] = item['cid'] ? escape(item['cid']) : '';
                             item['col'] = item['col'] ? escape(item['col']) : 0;
                             item['ct'] = item['ct'] ? escape(item['ct']): 0;
                             item['bnn'] = item['bnn'] ? escape(item['bnn']) : '';
@@ -106,7 +110,7 @@ class MyDouYu{
 
             if (status) {
 
-                let queue = this._queue;
+                let queue = this._giftQueue;
 
                 let room = new douyu(this._roomId);
 
