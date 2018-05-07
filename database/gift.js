@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 class Gift {
 
-    constructor(db) {
+    constructor(connection) {
 
-        this._db = db;
+        this._connection = connection;
 
     }
 
@@ -100,7 +100,23 @@ class Gift {
 
         sql += val;
 
-        this._connection.query(sql, callback);
+        this._connection.beginTransaction((err) => {
+
+            if (err) throw err;
+
+            this._connection.query(sql, (err, results, fields) => {
+
+                if (err) {
+                    return this._connection.rollback(function () {
+                        throw error;
+                    });
+                }
+
+                callback(results, fields);
+
+            })
+
+        });
 
     }
 

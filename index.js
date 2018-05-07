@@ -77,18 +77,46 @@
 // })
 const MyDouYu = require('./src/index');
 
+const Mysql = require('mysql');
+
+const Rooms = require('./database/rooms');
+
+const db = require('./config/db');
+
 let room = ['1972046', '9999', '2503170', '71017', '67373'];
 
-// let room = ['507882']
+let connection = Mysql.createConnection(db);
 
-room.forEach((item)=>{
+let rooms = new Rooms(connection);
 
-	let client = new MyDouYu(item);
+rooms.getRooms((err, results, fields)=>{
 
-	client.init();
+	if( err ) throw err;
 
-	client.getComment();
+	console.log(results.length);
 
-	client.getGift();
+	results.forEach((item)=>{
 
-})
+		let client = new MyDouYu(item.roomId, connection);
+
+		client.init();
+
+		client.getComment();
+
+		client.getGift();
+
+	})
+
+});
+
+// room.forEach((item)=>{
+
+// 	let client = new MyDouYu(item);
+
+// 	client.init();
+
+// 	client.getComment();
+
+// 	client.getGift();
+
+// })

@@ -1,17 +1,8 @@
-const mysql = require('mysql');
-
 class danmu{
 
-    constructor(db){
+    constructor(connection){
 
-        this._db = db;
-
-    }
-
-    // 开启连接
-    connectDb(){
-
-        this._connection = mysql.createConnection(this._db);
+        this._connection = connection;
 
     }
 
@@ -86,7 +77,9 @@ class danmu{
         })
     }
 
+    // 插入需要的数据
     insertDb(table, list, callback){
+
         let sql = `insert into ${table} (uid, nn, txt, cid, ulevel, gt, col, ct, bnn, bl, ic, brid, sahf, cst, hc, el, lk, repin, repout, bbm) VALUES `;
 
         let val = '';
