@@ -55,7 +55,7 @@ class danmu{
                     \`lk\` varchar(255) NOT NULL,
                     \`repin\` varchar(255) NOT NULL,
                     \`repout\` varchar(255) NOT NULL,
-                    \`bbm\` int(11) NOT NULL,
+                    \`bbm\` varchar(255) NOT NULL,
                     \`timestamp\` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '弹幕时间',
                     \`id\` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '记录id',
                     PRIMARY KEY (\`id\`)
