@@ -35,15 +35,21 @@ class Times{
     }
 
     getHours(){
-        this._Hours = this._Date.getHours();
+        let hours = this._Date.getHours();
+
+        this._Hours = hours < 10 ? '0' + hours : hours;
     }
 
     getMinutes(){
-        this._Minutes = this._Date.getMinutes();
+        let minutes = this._Date.getMinutes();
+
+        this._Minutes = minutes < 10 ? '0' + minutes : minutes;
     }
 
     getSecond(){
-        this._Second = this._Date.getSeconds();
+        let second = this._Date.getSeconds();
+
+        this._Second = second < 10 ? '0' + second : second;
     }
 
 }
