@@ -95,7 +95,23 @@ class danmu{
 
         sql+= val;
 
-        this._connection.query(sql, callback);
+        this._connection.beginTransaction((err) => {
+
+            if( err ) throw err;
+
+            this._connection.query(sql, (err, results, fields) => {
+
+                if (err) {
+                    return this._connection.rollback(function () {
+                        throw err;
+                    });
+                }
+
+                callback(results, fields);
+
+            })
+
+        });
 
     }
 

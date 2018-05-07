@@ -108,7 +108,7 @@ class Gift {
 
                 if (err) {
                     return this._connection.rollback(function () {
-                        throw error;
+                        throw err;
                     });
                 }
 
