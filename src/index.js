@@ -132,7 +132,7 @@ class MyDouYu{
                             item['sahf'] = item['sahf'] ? escape(item['sahf']) : '';
                             item['ct'] = item['ct'] ? escape(item['ct']) : 0;
                             item['hc'] = item['hc'] ? escape(item['hc']) : '';
-                            item['el'] = item['el'] ? escape(item['el']) : 0;
+                            item['el'] = item['el'] ? escape(item['el']) : '';
                             item['hits'] = item['hits'] ? escape(item['hits']) : 0;
                             item['eid'] = item['eid'] ? escape(item['eid']) : 0;
                             item['dw'] = item['dw'] ? escape(item['dw']) : 0;

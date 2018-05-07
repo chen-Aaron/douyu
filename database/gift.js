@@ -55,7 +55,7 @@ class Gift {
             \`dw\` bigint(20) NOT NULL COMMENT '主播体重',
             \`hits\` int(11) NOT NULL COMMENT '礼物连击次数 默讣值 1 没有字段取值 1 表示 1 连击',
             \`ct\` int(11) NOT NULL,
-            \`el\` int(11) NOT NULL,
+            \`el\` varchar(255) NOT NULL,
             \`cm\` int(11) NOT NULL,
             \`bnn\` varchar(255) NOT NULL COMMENT '粉丝牌子',
             \`bl\` int(11) NOT NULL COMMENT '粉丝牌子等级',
