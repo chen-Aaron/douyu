@@ -135,10 +135,9 @@ class MyDouYu{
                             item['el'] = item['el'] ? escape(item['el']) : 0;
                             item['hits'] = item['hits'] ? escape(item['hits']) : 0;
                             item['eid'] = item['eid'] ? escape(item['eid']) : 0;
-                            item['dw'] = item['dw'] ? escape(item['dw']) : '';
+                            item['dw'] = item['dw'] ? escape(item['dw']) : 0;
                             item['cm'] = item['cm'] ? escape(item['cm']) : 0;
                             item['bl'] = item['bl'] ? escape(item['bl']) : 0;
-                            item['bbm'] = item['bbm'] ? escape(item['bbm']) : '';
                             item['fc'] = item['fc'] ?escape( item['fc']) : '';
                             item['ulevel'] = item['level'] ? escape(item['level']) : 0;
 
