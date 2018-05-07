@@ -134,7 +134,7 @@ class MyDouYu{
                             item['hc'] = item['hc'] ? escape(item['hc']) : '';
                             item['el'] = item['el'] ? escape(item['el']) : 0;
                             item['hits'] = item['hits'] ? escape(item['hits']) : 0;
-                            item['eid'] = item['eid'] ? escape(item['eid']) : '';
+                            item['eid'] = item['eid'] ? escape(item['eid']) : 0;
                             item['dw'] = item['dw'] ? escape(item['dw']) : '';
                             item['cm'] = item['cm'] ? escape(item['cm']) : 0;
                             item['bl'] = item['bl'] ? escape(item['bl']) : 0;
