@@ -35,7 +35,7 @@ class Times{
     }
 
     getHours(){
-        let hours = this._Date.getHours();
+        let hours = this._Date.getHours() + 1;
 
         this._Hours = hours < 10 ? '0' + hours : hours;
     }
