@@ -23,7 +23,7 @@ class Times{
     }
 
     getMonth(){
-        let month = this._Date.getMonth();
+        let month = this._Date.getMonth() + 1;
 
         this._Month = month < 10 ? '0' + month : month;
     }
@@ -35,7 +35,7 @@ class Times{
     }
 
     getHours(){
-        let hours = this._Date.getHours() + 1;
+        let hours = this._Date.getHours();
 
         this._Hours = hours < 10 ? '0' + hours : hours;
     }
