@@ -12,8 +12,17 @@ class MyTransform extends Transform	{
 
     _transform(chunk, encoding, callback){
 
-        
-        callback(null, unescape(chunk[this._props])+'\n');
+        chunk = unescape(chunk[this._props].toString());
+
+        let chunks;
+
+        if (!/[\u4e00-\u9fa5]/.test(chunk)){
+            chunks = '';
+        } else {
+            chunks = chunk;
+        }
+
+        callback(null, chunks + '\n');
 
     }
     

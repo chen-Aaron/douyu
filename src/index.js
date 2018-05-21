@@ -1,3 +1,10 @@
+/*
+ * @Author: Aaron 
+ * @Date: 2018-05-21 09:35:20 
+ * @Last Modified by:   Aaron 
+ * @Last Modified time: 2018-05-21 09:35:20 
+ */
+
 const douyu = require('../chat/room');
 
 const Times = require('../chat/utils/date');

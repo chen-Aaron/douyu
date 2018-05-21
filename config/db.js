@@ -6,4 +6,12 @@ const config = {
 
 };
 
-module.exports = config;
+const confighhh = {
+    host: '111.231.62.94',
+    user: 'hhh',
+    password: '!@#456Qwe',
+    database: 'douyu',
+
+};
+
+module.exports = confighhh;

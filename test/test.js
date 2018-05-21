@@ -12,9 +12,11 @@ myTransform.init('txt');
 
 let mysql = Mysql.createConnection(db);
 
-let sql = `select txt from 9999_2018_04_07 `;
+let sql = `select txt from 52876_2018_04_08`;
 
-let streams = Fs.createWriteStream('test.txt');
+let streams = Fs.createWriteStream('./test/test.txt');
+
+myTransform.setEncoding('utf-8');
 
 // mysql.query(sql).on('result', (row)=>{
 //     console.log(unescape(row['txt']));
