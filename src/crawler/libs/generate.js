@@ -2,7 +2,7 @@
  * @Author: Aaron 
  * @Date: 2018-05-21 09:34:32 
  * @Last Modified by: Aaron
- * @Last Modified time: 2018-05-27 16:48:03
+ * @Last Modified time: 2018-05-27 22:39:36
  */
 // const Fs = require('fs');
 
@@ -271,6 +271,8 @@ const tables = require('../config/index.js');
 
         }).catch((e)=>{
 
+            this.handleError();
+            
             console.log(e);
 
         });
@@ -304,9 +306,17 @@ const tables = require('../config/index.js');
 
                 if (err) return reject(new Error('redis error'));
 
-                console.log(res)
+                if(!res){
 
-                resolve(res[1]);
+                    reject('empty');
+
+                } else {
+
+                    console.log(res)
+
+                    resolve(res[1]);
+
+                }
 
             })
 
@@ -333,13 +343,13 @@ const tables = require('../config/index.js');
     // 处理从redis队列中的错误
     handleError(){
 
-        let name = this._redisErrorName;
+        let name = this._redisName;
 
         this._redis.LLEN(name, (err, res)=>{
 
             if (err) reject(new Error('redis error'));
 
-            if( res&&res[1] === 0 ){
+            if( res === 0 ){
 
                 this.run();
 

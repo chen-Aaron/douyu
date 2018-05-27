@@ -3,5 +3,10 @@ const redis = {
     port: 6379,
     password: 'aaronzhuanyon'
 };
+const aliyunRedis = {
+    host: '47.91.233.62',
+    port: 6379,
+    password: 'aaronzhuanyon'
+}
 
-module.exports = redis;
+module.exports = aliyunRedis;
