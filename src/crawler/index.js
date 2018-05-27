@@ -2,15 +2,35 @@ const userId = 1681080;
 
 const redis = require('redis');
 
+const Mysql = require('mysql');
+
 const option = require('../../config/redis.js');
+
+const Generate = require('./libs/generate.js');
+
+const db = require('../../config/db');
+
+let mysql = Mysql.createConnection(db);
 
 let client = redis.createClient(option);
 
-client.BLPOP('news', 1, (err, res)=>{
+let generate = new Generate(mysql, client);
 
-    console.log(res)
+// console.log(new Error('error'))
 
-});
+generate.run();
+
+// generate.getRedisUids().then((res)=>{
+
+//     console.log(res)
+
+// }).catch((e)=>{console.log('yse',e)});
+
+// client.LPUSH('news', [1,2,3].slice(), (err, res)=>{
+
+//     console.log(res)
+
+// });
 
 // console.log(msg)
 

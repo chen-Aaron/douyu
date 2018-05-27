@@ -48,7 +48,8 @@
     "sigmund": "^1.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "request": "^2.87.0"
   },
   "scripts": {
     "test": "mocha"

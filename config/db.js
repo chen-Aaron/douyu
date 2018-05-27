@@ -14,4 +14,4 @@ const confighhh = {
 
 };
 
-module.exports = confighhh;
+module.exports = config;
