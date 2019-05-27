@@ -21,23 +21,27 @@ let danmu = new Danmu();
 // Initialize Room entity
 
 //峰哥房间
-// // var roomID = "9999";
+// var roomID = "9999";
 
-// var args = process.argv.slice(2);
+var args = process.argv.slice(2);
 
-// console.log(args);
+console.log(args);
 
-var roomID = '507882';
+var roomID = args[0];
 
-let dir = `../word/${roomID}`;
+let dir = `./word/${roomID}`;
 
 let time = new Times().getDetail();
 
 let fileDir = `${dir}/word${fileName}-${time}.txt`;
 
+console.log('its start')
+
 Fs.exists(dir, (res)=>{
 
 	if( !res ){
+		console.log('its startss', dir)
+
 
 		Fs.mkdir(dir, (err)=>{
 			if(err) return;
@@ -80,6 +84,8 @@ Fs.exists(dir, (res)=>{
 
 		var room = new douyu.ChatRoom(roomID);
 
+		console.log('its start', room)
+
 		// System level events handler
 		// room.on('connect', function (message) {
 		// 	console.log('DouyuTV ChatRoom #' + roomID + ' connected.');
@@ -92,23 +98,23 @@ Fs.exists(dir, (res)=>{
 		});
 
 		// Chat server events
-		// room.on('chatmsg', function (message) {
+		room.on('chatmsg', function (message) {
 
-		// 	let time = new Times().getDetail();
+			let time = new Times().getDetail();
 
-		// 	let msg = `[${message.nn}]:${message.txt}。[time]:${time}\n`;
+			let msg = `[${message.nn}]:${message.txt}。[time]:${time}\n`;
 
-		// 	stream.write(msg);
+			stream.write(msg);
 
-		// 	// Fs.writeFile('./word.txt', msg, (err)=>{
-		// 	// 	if(err){
-		// 	// 		console.log(err);
-		// 	// 	}
-		// 	// });
+			// Fs.writeFile('./word.txt', msg, (err)=>{
+			// 	if(err){
+			// 		console.log(err);
+			// 	}
+			// });
 
-		// 	console.log(message);
+			console.log(message);
 
-		// });
+		});
 
 
 		room.on('uenter', (message)=>{

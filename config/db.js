@@ -1,6 +1,6 @@
 const config = {
-    host: '47.91.233.62',
-    user: 'root',
+    host: '192.168.101.5',
+    user: 'aaron',
     password: 'zhuanyon',
     database: 'douyu',
 
